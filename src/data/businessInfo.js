@@ -1,11 +1,14 @@
 const businessInfo = {
   name: "Mexa Barber Shop",
 
-  slogan: "Más que un corte, una experiencia.",
+  slogan: "Tu mejor corte comienza aquí.",
 
-  phone: "4921234567",
+  phone: "4924935073",
 
-  whatsapp: "524921234567",
+  whatsapp: "524924935073",
+
+  whatsappMessage: 
+    "¡Hola! Me gustaría agendar una cita. ¿Tienen horarios disponibles?",
 
   email: "contacto@mexabarber.com",
 
@@ -20,6 +23,13 @@ const businessInfo = {
   location: {
     lat: null,
     lng: null
+  },
+  hero: {
+    title: "Tu mejor corte",
+    highlight: "comienza aquí.",
+    decription: "Especialistas en cortes modernos, clásicos y barba. Atención profesional. Reserva en menos de 1 minuto.",
+    satisfiedClients: 500,
+    responseTime: "Respondemos en menos de 5 minutos"
   }
 };
 

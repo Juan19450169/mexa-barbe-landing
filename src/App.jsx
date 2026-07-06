@@ -1,4 +1,4 @@
-import Navbar from "./components/layout/Navbar.jsx";
+//import Navbar from "./components/layout/Navbar.jsx";
 import Hero from "./components/sections/Hero.jsx";
 import Services from "./components/sections/Services.jsx";
 import WyChooseUs from "./components/sections/WhyChooseUs.jsx";
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
     
-      <Navbar />
+    {/*<Navbar />*/}
       <Hero />
       <Services />
       <WyChooseUs />
