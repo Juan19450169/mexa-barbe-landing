@@ -1,5 +1,4 @@
 import gallery from "../../data/gallery.js"
-import { useState } from "react";
 
 //Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,13 +6,14 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { openWhatsApp } from "../../utils/whatsapp.js";
+import { FaInstagram } from "react-icons/fa";
+
 import socialLinks from "../../data/socialLinks.js";
+
+import GalleryCard from "../../cards/GalleryCard.jsx";
 
 function Gallery() {
 
-  const [selectedImage, setSelectedImage] = useState(gallery[0]);
 
   return (
     <section id="gallery" className="py-24 bg-black">
@@ -66,66 +66,13 @@ function Gallery() {
 
               <SwiperSlide key={item.id}>
 
-                <img 
-                src={item.image}
-                alt={item.alt}
-                onClick={() =>setSelectedImage(item)}
-                  className={`w-full h-52 object-cover rounded-lg cursor-pointer transition duration-300
-                  ${
-                    selectedImage.id === item.id
-                      ? "ring-4 ring-yellow-500 scale-105"
-                      : "hover:scale-105"
-                  }`}
-                />
+                <GalleryCard item={item} />
+
               </SwiperSlide>
             ))}
           </Swiper>
 
-        </div>
-
-        {/* TEXTO */}
-
-         <p className="text-center text-gray-500 mt-6">
-          Desliza o utiliza las flechas para ver más trabajos.
-        </p>
-
-        {/* TARJETA DEL TRABAJO SELECCIONADO */}
-
-        <div className="mt-12 max-w-4xl mx-auto bg-zinc-900 rounded-xl overflow-hidden shadow-2xl">
-
-            <img 
-            src={selectedImage.image} 
-            alt={selectedImage.alt}
-            className="w-full h-[420px] object-cover"
-            />
-
-            <div className="p-8">
-
-              <h3 className="text-3xl font-bold text-white">
-                {selectedImage.title}
-              </h3>
-
-              <p className="mt-4 text-gray-300 leading-8">
-                {selectedImage.description}
-              </p>
-
-              <button
-              onClick={openWhatsApp}
-              className="mt-8 flex items-center gap-3
-              bg-green-500 hover:bg-green-600
-              text-white font-semibold
-              px-6 py-3 rounded-lg
-              transition duration-300"
-            >
-
-              <FaWhatsapp className="text-xl" />
-
-              Reservar este estilo
-
-            </button>
-
-            </div>
-        </div>
+        </div>        
 
         {/* BOTON IG */}
 
@@ -151,6 +98,7 @@ function Gallery() {
           </a> 
 
         </div>
+        
 
       </div>
 
