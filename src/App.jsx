@@ -17,8 +17,8 @@ function App() {
     {/*<Navbar />*/}
       <Hero />
       <Services />
-      <WyChooseUs />
       <Gallery />
+      <WyChooseUs />
       <Testimonials />
       <Location />
       <CTA />

@@ -2,17 +2,12 @@ import businessInfo from "../../data/businessInfo"
 import heroImage from "../../assets/images/fade_alto_desktop.jpeg"
 import logo from "../../assets/images/mexa_barber_shop.png"
 import { FaWhatsapp, FaPhoneAlt, FaStar} from "react-icons/fa";
+import { openWhatsApp } from "../../utils/whatsapp";
+import { callBusiness } from "../../utils/call";
 
 
 function Hero() {
-  const handleWhatsApp = () => {
-    const message = encodeURIComponent(businessInfo.whatsappMessage);
-    window.open(`https://wa.me/${businessInfo.whatsapp}?text=${message}`, "_blank");
-  };
-
-  const handleCall = () => {
-    window.location.href = `tel:${businessInfo.phone}`;
-  }
+  
   return (
      <section
       id="hero"
@@ -71,7 +66,7 @@ function Hero() {
           <div className="mt-10 flex flex-col gap-4 w-fit">
 
             <button
-            onClick={handleWhatsApp}
+            onClick={openWhatsApp}
               className="bg-green-500 hover:bg-green-600
                text-white font-semibold px-8 py-4 rounded-lg 
                transition duration-300 flex items-center justify-center gap-2"
@@ -81,7 +76,7 @@ function Hero() {
             </button>
 
             <button
-              onClick={handleCall}
+              onClick={callBusiness}
               className="border-2 border-yellow-500 text-yellow-500
                hover:bg-yellow-500 hover:text-black font-semibold
                 px-8 py-4 rounded-lg transition duration-300 flex items-center justify-center gap-2"
