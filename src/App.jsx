@@ -18,8 +18,8 @@ function App() {
       <Hero />
       <Services />
       <Gallery />
-      <WyChooseUs />
       <Testimonials />
+      <WyChooseUs />
       <Location />
       <CTA />
       <Footer />
