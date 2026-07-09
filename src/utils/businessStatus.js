@@ -26,7 +26,7 @@ function convertToMinutes(time){
     }
     if (period.toLowerCase() === "am" && hour === 12) {
     hour = 0;
-  }
+}
 
   return hour * 60 + minutes;
 }
@@ -68,16 +68,57 @@ export function getBusinessStatus(schedule){
     //console.log("Hora actual:", currentMinutes);
 
 
-    const isOpen = currentMinutes >=openMinutes && 
-                currentMinutes < closeMinutes;
-                //console.log("¿Está abierto?:", isOpen);
+                //NEGOCIO ABIERTO
+    if(currentMinutes >=openMinutes && currentMinutes < closeMinutes){
 
-    return{
+        return{
 
-        isOpen,
-
-        message: isOpen
-        ? `Abierto • Cierra a las ${close}`
-        : `Cerrado • Abre a las ${open}`
+            isOpen: true,
+            message: `Abierto • Cierra a las ${close}`
+        }
     }
+
+            //TODAVIA NO ABRE HOY
+    if(currentMinutes < openMinutes){
+
+        return{
+
+            isOpen: false,
+            message: `Cerrado • Abre hoy a las ${open}`
+        }
+    }
+
+    
+
+    //Si esta cerrado buscar el siguiente horario 
+
+    const todayIndex = weekDays.indexOf(today);
+
+    for(let i= 1; i<= 7; i++){
+        const nextDay = weekDays[(todayIndex + i)%7];
+
+        const nextSchedule = schedule.find(item => item.days.includes(nextDay));
+
+        if(nextSchedule){
+            const nextOpen = nextSchedule.hours.split(" - ")[0];
+
+            return {
+
+                isOpen: false,
+
+                message: 
+                i === 1
+            ? `Cerrado • Abre mañana a las ${nextOpen}`
+            : `Cerrado • Abre el ${nextDay} a las ${nextOpen}`
+            }
+        }
+        
+        //Respaldo (por si algun dia se eliminan los horarios)
+
+        return{
+
+            isOpen: false,
+            message: "Actualmente cerrado."
+        }
+}
 }
