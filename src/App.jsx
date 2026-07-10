@@ -5,8 +5,8 @@ import WyChooseUs from "./components/sections/WhyChooseUs.jsx";
 import Gallery from "./components/sections/Gallery.jsx";
 import Testimonials from "./components/sections/Testimonials.jsx";
 import Location from "./components/sections/Location.jsx";
-import CTA from "./components/sections/CTA.jsx";
-import Footer from "./components/layout/Footer.jsx";
+import FloatingWhatsApp from "./components/ui/FloatingWhatsApp.jsx";
+import CTAFooter from "./components/layout/CTAFooter.jsx";
 
 function App() {
 
@@ -21,9 +21,8 @@ function App() {
       <Testimonials />
       <WyChooseUs />
       <Location />
-      <CTA />
-      <Footer />
-
+      <CTAFooter />
+      <FloatingWhatsApp />
     </>
   )
 }
