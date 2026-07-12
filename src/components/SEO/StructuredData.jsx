@@ -1,0 +1,56 @@
+import businessInfo from "../../data/businessInfo"
+import location from "../../data/location"
+import socialLinks from "../../data/socialLinks"
+import { buildOpeningHours } from "../../utils/schemaHelper.js";
+
+function StructuredData() {
+
+    const schema = {
+
+        "@context": "https://schema.org",
+        "@type": "HairSalon",
+        name: businessInfo.name,
+
+        description: businessInfo.hero.decription,
+
+        telephone: `+${businessInfo.whatsapp}`,
+
+        priceRange: businessInfo.priceRange,
+
+        currenciesAccepted: businessInfo.currenciesAccepted,
+
+        paymentAccepted: businessInfo.paymentAccepted,
+        
+        address: {
+
+            "@type": "PostalAddress",
+            streetAddress: location.address,
+            addressCountry: location.country,
+        },
+
+        geo: {
+
+            "@type": "GeoCoordinates",
+            latitude: location.coordinates.lat,
+            longitude: location.coordinates.lng,
+        },
+
+        hasMap: location.googleMapsLink,
+
+        sameAs: Object.values(socialLinks).filter(Boolean),
+
+        openingHoursSpecification:
+            buildOpeningHours(location.schedule),
+
+    }
+  return (
+    <script 
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+        __html: JSON.stringify(schema),
+    }}
+    />
+  )
+}
+
+export default StructuredData

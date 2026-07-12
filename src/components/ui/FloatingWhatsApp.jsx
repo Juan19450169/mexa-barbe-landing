@@ -39,7 +39,7 @@ function FloatingWhatsApp() {
     return (
 
         <button
-
+            aria-label="Agendar cita por WhatsApp"
             onClick={openWhatsApp}
 
             className={`fixed bottom-6 right-6 z-50 bg-yellow-500 hover:bg-yellow-500

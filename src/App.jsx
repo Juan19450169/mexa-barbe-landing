@@ -7,13 +7,14 @@ import Testimonials from "./components/sections/Testimonials.jsx";
 import Location from "./components/sections/Location.jsx";
 import FloatingWhatsApp from "./components/ui/FloatingWhatsApp.jsx";
 import CTAFooter from "./components/layout/CTAFooter.jsx";
+import StructuredData from "./components/SEO/StructuredData.jsx";
 
 function App() {
 
 
   return (
     <>
-    
+      <StructuredData />
     {/*<Navbar />*/}
       <Hero />
       <Services />

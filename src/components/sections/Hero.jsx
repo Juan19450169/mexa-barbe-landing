@@ -28,8 +28,8 @@ function Hero() {
           
           <img 
           src={logo}
-           alt="Mexa Barber Shop"
-           className="w-48 md:w-60 object-contain"
+          alt="Mexa Barber Shop"
+          className="w-48 md:w-60 object-contain"
             />
 
             <div className="flex gap-1 mt-3">

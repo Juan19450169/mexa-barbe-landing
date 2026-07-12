@@ -64,6 +64,7 @@ function Location() {
 
             <a 
             href={location.googleMapsLink}
+            aria-label="Ubicacion de Mexa Barber Shop"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 mt-6 border-2 border-yellow-500

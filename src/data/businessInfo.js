@@ -10,20 +10,16 @@ const businessInfo = {
   whatsappMessage: 
     "¡Hola! Me gustaría agendar una cita. ¿Tienen horarios disponibles?",
 
-  email: "contacto@mexabarber.com",
+    priceRange: "$$",
 
-  address: "Dirección del negocio",
+    currenciesAccepted: "MXN",
 
-  schedule: {
-    mondayFriday: "09:00 - 20:00",
-    saturday: "09:00 - 18:00",
-    sunday: "Cerrado"
-  },
-
-  location: {
-    lat: null,
-    lng: null
-  },
+    paymentAccepted: [
+        "Cash",
+        "Credit Card",
+        "Debit Card",
+        "Transfer"
+    ],
   hero: {
     title: "Tu mejor corte",
     highlight: "comienza aquí.",

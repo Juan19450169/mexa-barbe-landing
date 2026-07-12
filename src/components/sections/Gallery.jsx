@@ -80,6 +80,7 @@ function Gallery() {
 
           <a
             href={socialLinks.instagram}
+            aria-label="Instagram de Mexa Barber Shop"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3
