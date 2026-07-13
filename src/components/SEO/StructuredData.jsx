@@ -9,9 +9,15 @@ function StructuredData() {
 
         "@context": "https://schema.org",
         "@type": "HairSalon",
+        "@id": "https://mexa-barbe-landing.vercel.app/#organization",
+
         name: businessInfo.name,
 
         description: businessInfo.hero.decription,
+
+        image: "https://mexa-barbe-landing.vercel.app/og-image.jpeg",
+
+        logo: "https://mexa-barbe-landing.vercel.app/favicon.png",
 
         telephone: `+${businessInfo.whatsapp}`,
 
@@ -33,6 +39,14 @@ function StructuredData() {
             "@type": "GeoCoordinates",
             latitude: location.coordinates.lat,
             longitude: location.coordinates.lng,
+        },
+
+        areaServed: {
+
+            "@type": "City",
+
+            name: "Zacatecas"
+
         },
 
         hasMap: location.googleMapsLink,
