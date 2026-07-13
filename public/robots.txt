@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mexa-barbe-landing.vercel.app/sitemap.xml
